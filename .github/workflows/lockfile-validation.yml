@@ -1,0 +1,60 @@
+﻿name: Validate mod lockfile
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+    paths:
+      - "mods.lock.json"
+      - "fetch_mods.py"
+      - "inspect_mods.py"
+      - "validate_mods_lock.py"
+      - "check_mod_dependencies.py"
+      - ".github/workflows/lockfile-validation.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Python helper dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Validate Python syntax
+        run: python -m compileall -q .
+      - name: Validate JSON files
+        shell: bash
+        run: python -c "import json; from pathlib import Path; [json.loads(p.read_text(encoding='utf-8')) for p in Path('.').rglob('*.json') if '.git' not in p.parts and 'build' not in p.parts]"
+      - name: Validate mods.lock.json schema rules
+        run: python validate_mods_lock.py
+      - name: Fetch pinned CurseForge jars
+        run: python fetch_mods.py
+      - name: Inspect mod metadata and dependencies
+        run: python inspect_mods.py
+      - name: Verify mandatory dependencies are satisfied
+        run: python check_mod_dependencies.py
+      - name: Generate CurseForge manifest
+        run: python write_curseforge_manifest.py
+      - name: Validate generated CurseForge manifest
+        run: python -m json.tool dist/curseforge/manifest.json
+
+  companion:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - name: Verify Gradle wrapper
+        working-directory: riftstar-companion
+        run: ./gradlew --version
+      - name: Build companion
+        working-directory: riftstar-companion
+        run: ./gradlew build --no-daemon
