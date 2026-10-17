@@ -1,33 +1,26 @@
-# RIFT//STAR — The Fractured Cosmos
+# RIFT//STAR: The Fractured Cosmos
 
-A Minecraft Forge 1.20.1 modpack connecting psychedelic dimensions, strange cave biomes, and space exploration through a simple shared progression system.
+Minecraft Java 1.20.1 / Forge 47.4.10 foundation. Java 17 required.
 
-**Status: source import pending.** This repository has been initialized for the ongoing project; it does **not** yet contain the full Codex project. The uploaded RAR archive was inventoried but could not be extracted in the current environment because its RAR5 compression dictionary exceeds the available decoder's limit.
+## Reproduce
 
-## Experience goals
+1. Run `python fetch_mods.py` to fetch the pinned CurseForge files and verify their metadata and SHA-256 hashes in `mods.lock.json`.
+2. Run `python bootstrap_forge.py` to obtain the official Forge installer and MDK.
+3. Run `python inspect_mods.py` to inspect the jars' `mods.toml` dependency declarations.
+4. Use this directory's `mods/`, `config/`, `defaultconfigs/`, `kubejs/`, and `resourcepacks/` as the client instance contents.
+5. Run `python riftstar-companion/build_local.py` and `python assemble_server.py` after Forge's server install to copy the server-side files into `server/`.
 
-- Colourful, bizarre, obviously modded worlds, without complicated onboarding.
-- Existing mods supply most world content. Configuration, KubeJS scripts and a small Forge companion provide integration.
-- Ad Astra for rockets; Blue Skies and The Bumblezone for dimensions; Alex's Caves for rare Overworld cave biomes.
-- World Portal for stable links; custom companion behavior only when ordinary datapacks and scripts cannot handle it.
-- Keep progression exploratory rather than a sprawling quest grind.
+The client profile uses Embeddium. The server omits it. The files marked `deferred` in `mods.lock.json` are audited but not installed.
 
-## Known baseline (from Codex's reports)
+An isolated local CurseForge profile is installed at `C:\Users\Owner\curseforge\minecraft\Instances\RIFTSTAR - The Fractured Cosmos` with Forge 47.4.10. Client title-screen testing remains pending.
 
-- Minecraft 1.20.1 / Forge 47.4.10 / Java 17.
-- Codex reported successfully booting a dedicated server with the companion mod and loading/saving Blue Skies and Ad Astra dimensions.
-- Client launch, portal traversal, custom gameplay and shaders have **not** been demonstrated.
-- RAR inventory includes World Portal Forge **0.0.11**, not the 0.0.10 mentioned in the design research.
-- The modpack's current KubeJS scripts are minimal; the actual cross-mod progression remains to be implemented.
+## Current slice
 
-See [Archive inventory](docs/archive-inventory.md) for the dependency names observed without unpacking.
+- Blue Skies' actual `blue_skies:diopside_gem` and Ad Astra's actual `ad_astra:steel_plate` craft a Prism Lens.
+- Carrying the lens grants the `riftstar:first_colour` advancement.
+- Ad Astra, Blue Skies, and Alex's Caves retain their native progression and dimensions.
+- The Forge companion is a separate source module. `build_local.py` produces its minimal jar with Java 17; ForgeGradle currently fails during dependency transformation. Rift travel and Atlas mechanics are future work.
 
-## Development workflow
+See `docs/compatibility-audit.md`, `docs/development-log.md`, `docs/test-matrix.md`, and `docs/destinations.md`.
 
-1. Import the source and configs from an extractable source-only ZIP (omit bundled downloads, caches, logs and saved worlds).
-2. Check exact mod dependencies and configs and preserve a version-locked manifest.
-3. Verify both dedicated-server and client launch.
-4. Build a single complete exploration loop before expanding progression.
-5. Test compatibility, multiplayer and visuals against a documented matrix.
-
-Third-party mod JARs should be downloaded from their legitimate distribution sources and kept out of Git history.
+**GitHub import status:** Core scripts and some code have been committed, but not every source-archive file has been imported yet. The original upload is retained separately. No bundled third-party mod JARs or server save data are tracked.
