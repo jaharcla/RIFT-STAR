@@ -29,6 +29,7 @@
 - Verified local Java toolchain in this environment is Java 17 (`java`/`javac` 17.0.20.1 with `JAVA_HOME=/usr/lib/jvm/temurin-17-jdk-amd64`).
 - `riftstar-companion/build_local.py` remains in place as fallback, but still depends on missing Forge server libraries (`server/libraries/...`) and missing companion resource metadata (`mods.toml`) to produce a loadable mod jar.
 - Attempted Forge MDK metadata retrieval and mod fetch/server assembly flow, but outbound resolution to Forge/CurseForge hosts failed in this sandbox, so launch verification here remained blocked.
+- Attempted to open follow-up GitHub issues from this environment, but CLI issue creation is blocked without `GH_TOKEN`/authenticated credentials in this run.
 - Added lockfile/CI automation and distribution-manifest generation scripts (see repository root scripts and `.github/workflows/lockfile-validation.yml`).
 
 ### Source-import gaps observed from README/docs references vs. repository contents
