@@ -23,6 +23,9 @@
 !**/gradle/wrapper/gradle-wrapper.jar
 
 # Local build and server information
+__pycache__/
+**/__pycache__/
+*.pyc
 *.log
 *.tmp
 *.bak
