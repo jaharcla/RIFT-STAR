@@ -13,6 +13,9 @@ on:
       - "check_mod_dependencies.py"
       - ".github/workflows/lockfile-validation.yml"
 
+permissions:
+  contents: read
+
 jobs:
   validate:
     runs-on: ubuntu-latest
