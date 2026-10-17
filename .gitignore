@@ -11,6 +11,8 @@
 **/crash-reports/
 **/cache/
 **/caches/
+/dist/
+/tools/
 /world/
 /saves/
 /backups/

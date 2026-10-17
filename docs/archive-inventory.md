@@ -39,6 +39,8 @@ worldportal-forge-0.0.11+1.20.1.jar
 
 This is an **observed archive inventory**, not a tested or endorsed dependency lock. The research design report discussed World Portal 0.0.10; the uploaded archive instead contains 0.0.11.
 
-## Extraction blocker and next input
+## Restoration status
 
-The RAR5 compression dictionary exceeds this environment's installed archive decoder limits. To import the actual source, provide a small **ZIP** of `riftstar-companion/`, `kubejs/`, `config/`, `defaultconfigs/`, `resourcepacks/`, `docs/`, `mods.lock.json` and root `*.py`/README files, excluding `build/`, `.gradle/`, `server/`, `mods/`, `libraries/` and logs. This avoids re-uploading hundreds of megabytes of downloadable jars.
+The source baseline has been restored to the repository and verified against the imported archive inventory. The temporary `import/part-*.txt` payloads are no longer part of the development tree. Third-party mod JARs, Forge libraries, server worlds, and logs remain intentionally excluded from Git and are restored by the reproducible setup scripts.
+
+The original 62,076-byte Gradle wrapper JAR was not available in the repository history. A compatible wrapper JAR from the official Gradle 8.8 source is tracked instead; its SHA-256 and provenance are recorded in `riftstar-companion/README.md`.
