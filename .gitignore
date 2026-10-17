@@ -1,0 +1,42 @@
+# Generated / downloaded content
+/mods/
+/server/
+/run/
+/libraries/
+/.gradle/
+**/.gradle/
+**/build/
+**/out/
+**/logs/
+**/crash-reports/
+**/cache/
+**/caches/
+/world/
+/saves/
+/backups/
+
+# Archive and launcher exports
+*.rar
+*.7z
+*.zip
+*.jar
+!**/gradle/wrapper/gradle-wrapper.jar
+
+# Local build and server information
+*.log
+*.tmp
+*.bak
+.env
+.env.*
+*.secret
+*.token
+ops.json
+whitelist.json
+usercache.json
+server.properties
+
+# Editor / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
