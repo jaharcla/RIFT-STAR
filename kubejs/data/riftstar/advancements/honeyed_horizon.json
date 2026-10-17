@@ -1,0 +1,18 @@
+{
+  "parent": "riftstar:root",
+  "display": {
+    "icon": { "item": "minecraft:honey_bottle" },
+    "title": "Honeyed Horizon",
+    "description": "Find the hidden world of the Bumblezone by its own native way in.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "visit_bumblezone": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": { "to": "the_bumblezone:the_bumblezone" }
+    }
+  }
+}

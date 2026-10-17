@@ -6,7 +6,7 @@
 | Forge dedicated-server install | Pass | `server/run.bat`, Forge 47.4.10 libraries |
 | Server loader + world creation | Pass | Forge `Done` on two launches; clean stop and reload in `server/logs/latest.log` |
 | KubeJS item + recipe registration | Pass | 1 startup script and 1 server script, zero errors; 1 added recipe, zero failures |
-| Prismara advancement graph and referenced IDs | Pass | `python validate_progression.py`; four nodes, acyclic graph |
+| Progression advancement graph and referenced IDs | Pass on source validation | `python validate_progression.py`; seven nodes, acyclic graph; confirm dimension/biome IDs in restored pinned jars before runtime acceptance |
 | Prism Lens crafting + advancement trigger | Not run | Requires client inventory/crafting test |
 | Overworld + Everbright/Everdawn | Partial | Dimension chunks force-loaded, saved, unloaded, and reloaded; native portal travel not run |
 | Moon/Mars/Glacio + other Ad Astra dimensions | Partial | All 11 dimension chunks loaded and saved; native travel untested |

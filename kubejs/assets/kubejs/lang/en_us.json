@@ -1,11 +1,17 @@
 {
   "item.kubejs.prism_lens": "Prism Lens",
-  "advancements.riftstar.root.title": "A Fracture in the Sky",
-  "advancements.riftstar.root.description": "Begin tracing the colour beyond the Overworld.",
+  "advancements.riftstar.root.title": "The Fracture Opens",
+  "advancements.riftstar.root.description": "The first strange colour is only one thread in a much wider cosmos.",
   "advancements.riftstar.prismara_discovered.title": "Prismara",
   "advancements.riftstar.prismara_discovered.description": "Cross the native Blue Skies route into Everbright.",
   "advancements.riftstar.prismara_resource.title": "A Gemstone in Everbright",
   "advancements.riftstar.prismara_resource.description": "Recover a verified Everbright diopside gem.",
   "advancements.riftstar.first_colour.title": "The First Colour",
-  "advancements.riftstar.first_colour.description": "Fuse an Everbright gemstone with spacefaring steel."
+  "advancements.riftstar.first_colour.description": "Fuse an Everbright gemstone with spacefaring steel.",
+  "advancements.riftstar.moonlit_misfit.title": "Moonlit Misfit",
+  "advancements.riftstar.moonlit_misfit.description": "Follow Ad Astra's route to the Moon. The sky has more than one kind of strange.",
+  "advancements.riftstar.honeyed_horizon.title": "Honeyed Horizon",
+  "advancements.riftstar.honeyed_horizon.description": "Find the hidden world of the Bumblezone by its own native way in.",
+  "advancements.riftstar.understone_rainbow.title": "Understone Rainbow",
+  "advancements.riftstar.understone_rainbow.description": "Descend into the Primordial Caves and meet Alex's Caves on its own terms."
 }

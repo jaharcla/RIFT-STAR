@@ -11,7 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 LOCK_PATH = ROOT / "mods.lock.json"
 COMPANION_JAR = ROOT / "riftstar-companion" / "build" / "libs" / "riftstar_companion-0.1.0.jar"
-PACKAGE_NAME = "RIFTSTAR-0.1.0-alpha.zip"
+PACKAGE_NAME = "RIFTSTAR-0.2.0-alpha.zip"
 
 
 def run(command: list[str], *, cwd: Path = ROOT) -> None:
@@ -92,7 +92,7 @@ def create_package(lock: dict) -> Path:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Build the RIFT//STAR Alpha 0.1 CurseForge pack.")
+    parser = argparse.ArgumentParser(description="Build the RIFT//STAR Alpha 0.2 CurseForge pack.")
     parser.add_argument(
         "--restore",
         action="store_true",

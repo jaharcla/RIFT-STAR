@@ -3,13 +3,13 @@
     "icon": {
       "item": "minecraft:compass"
     },
-    "title": "A Fracture in the Sky",
-    "description": "Begin tracing the colour beyond the Overworld.",
+    "title": "The Fracture Opens",
+    "description": "The first strange colour is only one thread in a much wider cosmos.",
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false,
-    "background": "minecraft:textures/block/amethyst_block.png"
+    "background": "riftstar:textures/gui/advancements/backgrounds/fractured_cosmos.png"
   },
   "criteria": {
     "overworld_presence": {

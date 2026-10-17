@@ -1,0 +1,18 @@
+{
+  "parent": "riftstar:root",
+  "display": {
+    "icon": { "item": "minecraft:glow_berries" },
+    "title": "Understone Rainbow",
+    "description": "Descend into the Primordial Caves and meet Alex's Caves on its own terms.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "visit_primordial_caves": {
+      "trigger": "minecraft:location",
+      "conditions": { "player": { "location": { "biome": "alexscaves:primordial_caves" } } }
+    }
+  }
+}

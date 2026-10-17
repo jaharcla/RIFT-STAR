@@ -56,6 +56,6 @@ jobs:
           name: riftstar-alpha-smoke-test
           path: |
             server-smoke.log
-            dist/RIFTSTAR-0.1.0-alpha.zip
+            dist/RIFTSTAR-0.2.0-alpha.zip
             server/logs/**
             server/crash-reports/**

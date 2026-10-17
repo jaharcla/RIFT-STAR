@@ -40,7 +40,14 @@ The client profile uses Embeddium. The server omits it. The files marked `deferr
 
 1. Run `python fetch_mods.py` to restore the exact pinned mod jars.
 2. Build the companion with Java 17 and run `python assemble_client.py` for a local client tree.
-3. Run `python package_alpha.py` to create `dist/RIFTSTAR-0.1.0-alpha.zip` for CurseForge import.
+3. Run `python package_alpha.py` to create `dist/RIFTSTAR-0.2.0-alpha.zip` for CurseForge import.
+
+RIFT//STAR's optional discovery threads celebrate Ad Astra's Moon, The
+Bumblezone, and Alex's Caves' Primordial Caves while preserving each mod's
+native access and progression. The Prismara thread connects Blue Skies,
+Ad Astra, and vanilla crafting through the Prism Lens. Enable the included
+`RIFTSTAR_Visuals` resource pack for the custom Fractured Cosmos advancement
+backdrop; the Prism Lens icon loads automatically through KubeJS.
 
 Client files can be copied into any Forge 1.20.1 instance; no machine-specific
 directory is required. Client title-screen testing remains pending in this
