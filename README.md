@@ -40,7 +40,7 @@ The client profile uses Embeddium. The server omits it. The files marked `deferr
 
 1. Run `python fetch_mods.py` to restore the exact pinned mod jars.
 2. Build the companion with Java 17 and run `python assemble_client.py` for a local client tree.
-3. Run `python package_alpha.py` to create `dist/RIFTSTAR-0.2.0-alpha.zip` for CurseForge import.
+3. Run `python package_alpha.py` to create `dist/RIFTSTAR-0.2.1-alpha.zip` for CurseForge import.
 
 RIFT//STAR's optional discovery threads celebrate Ad Astra's Moon, The
 Bumblezone, and Alex's Caves' Primordial Caves while preserving each mod's
@@ -84,6 +84,11 @@ python -m json.tool mods.lock.json
 python -m py_compile assemble_client.py assemble_server.py bootstrap_forge.py check_mod_dependencies.py fetch_mods.py inspect_mods.py make_icon.py package_alpha.py validate_mods_lock.py write_curseforge_manifest.py write_modlist.py
 python write_curseforge_manifest.py
 ```
+
+After assembling a disposable Forge server, stage the live recipe, tag,
+progression-cost and loot checks with `python tests/stage_runtime_checks.py server`.
+Start that server and inspect `server/kubejs/riftstar-runtime-results.json`; the
+test fixture is kept outside the client package.
 
 `inspect_mods.py` and `check_mod_dependencies.py` require the restored `mods/`
 directory and generate `docs/jar-audit.json`; downloaded artifacts are ignored

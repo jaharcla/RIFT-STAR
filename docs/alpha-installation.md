@@ -1,6 +1,6 @@
-# RIFT//STAR Alpha 0.2 installation
+# RIFT//STAR Alpha 0.2.1 installation
 
-The supported client import is `dist/RIFTSTAR-0.2.0-alpha.zip`. In a
+The supported client import is `dist/RIFTSTAR-0.2.1-alpha.zip`. In a
 CurseForge-compatible launcher, create a Minecraft **1.20.1 Forge 47.4.10**
 profile and use **Import** to select that ZIP. The launcher downloads the
 manifest-pinned third-party mods; the pack's companion jar and configuration

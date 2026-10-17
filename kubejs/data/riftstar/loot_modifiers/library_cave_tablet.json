@@ -1,0 +1,11 @@
+{
+  "type": "alexscaves:cave_tablet",
+  "biome": "alexscaves:primordial_caves",
+  "replace": false,
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "blue_skies:chests/blinding_dungeon/library_chest"
+    }
+  ]
+}

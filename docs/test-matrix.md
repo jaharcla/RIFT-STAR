@@ -1,5 +1,12 @@
 # Test matrix
 
+Alpha 0.2.1 was checked in a disposable Java 17 / Forge 47.4.10 server. It created,
+saved and reloaded a test world, then passed 659 live assertions with zero
+failures: parsed recipes and coolant yields, 19 native progression recipes,
+loaded compatibility tags, and 256 actual library loot rolls (41 native cave
+tablets; original loot retained on every roll). The graphical client remains
+untested in this headless environment.
+
 | Check | Status | Evidence / next action |
 |---|---|---|
 | Exact Forge and mod-file metadata | Pass | `mods.lock.json`; `docs/jar-audit.json` |
@@ -14,7 +21,7 @@
 | World Portal fixed link | Not applicable | Native Blue Skies entry/return is preserved; no World Portal link was added |
 | Forge companion local build + server load | Pass | `build_local.py` compiled on Java 17; Forge `debug.log` found valid `riftstar_companion` 0.1.0 and server reached `Done` |
 | ForgeGradle build | Blocked | Access Transformer throws `ReadOnlyFileSystemException` before Java compilation, including with Java 21 |
-| Client profile assembly | Pass | Isolated CurseForge Forge 47.4.10 profile; 15 jar hashes match project |
+| Client file assembly | Pass | `assemble_client.py`; 18 pinned jar hashes match the lock, plus the companion jar (19 total) |
 | Client launch + join | Not run | CurseForge window unavailable from this environment; title screen and in-game crafting unverified |
 | Two-player progression acceptance | Not run | Requires a client-capable multiplayer test |
 

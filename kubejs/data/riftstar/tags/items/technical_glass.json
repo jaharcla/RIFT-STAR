@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:glass",
+    "blue_skies:crystal_glass",
+    "blue_skies:midnight_glass"
+  ]
+}
