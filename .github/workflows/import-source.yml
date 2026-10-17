@@ -2,7 +2,7 @@ name: Import archived RIFT//STAR source
 on:
   push:
     paths:
-      - 'import/riftstar-source.tar.gz.b64'
+      - 'import/riftstar-source.tar.xz.b64'
       - '.github/workflows/import-source.yml'
   workflow_dispatch:
 permissions:
@@ -17,11 +17,14 @@ jobs:
         run: |
           python3 - <<'PY'
           import base64, io, pathlib, tarfile
-          p = pathlib.Path('import/riftstar-source.tar.gz.b64')
+          p = pathlib.Path('import/riftstar-source.tar.xz.b64')
           if not p.is_file():
               raise SystemExit('Missing source archive')
           raw = base64.b64decode(p.read_text(encoding='ascii').strip(), validate=True)
-          with tarfile.open(fileobj=io.BytesIO(raw), mode='r:gz') as tar:
+          import hashlib
+          if hashlib.sha256(raw).hexdigest() != 'f7c121a165bf8b0e187b9a86c5867b633ac5fda1552ea204bee6321df2ee6ea4':
+              raise SystemExit('Source archive digest mismatch')
+          with tarfile.open(fileobj=io.BytesIO(raw), mode='r:xz') as tar:
               entries = tar.getmembers()
               for member in entries:
                   path = pathlib.PurePosixPath(member.name)
