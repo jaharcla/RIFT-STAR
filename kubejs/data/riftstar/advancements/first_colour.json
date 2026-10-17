@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "kubejs:prism_lens"
+    },
+    "title": "The First Colour",
+    "description": "Fuse an Everbright gemstone with spacefaring steel.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false,
+    "background": "minecraft:textures/block/amethyst_block.png"
+  },
+  "criteria": {
+    "has_prism_lens": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kubejs:prism_lens"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
