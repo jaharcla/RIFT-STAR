@@ -29,6 +29,8 @@ PINS = [
     ("ferritecore", "ferritecore", 429235, 4810975, "both"),
     ("jade", "jade", 324717, 5876199, "both"),
     ("jei", "jei", 238222, 8778011, "client"),
+    ("patchouli", "patchouli", 306770, 4636277, "both"),
+    ("packetfixer", "packet-fixer", 689467, 7872374, "both"),
 ]
 
 

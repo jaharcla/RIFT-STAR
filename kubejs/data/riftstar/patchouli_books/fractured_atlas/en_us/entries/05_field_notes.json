@@ -1,0 +1,15 @@
+{
+  "name": "Field Notes",
+  "icon": "minecraft:book",
+  "category": "riftstar:fractured_atlas",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Blue Skies glass can substitute in selected Ad Astra components. Snowcap mushrooms and frostmint can feed the Cryo Freezer, while native ice shards remain the most efficient coolant."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Every Atlas connection is optional. JEI and item tooltips remain the source of truth for exact recipes and available alternatives."
+    }
+  ]
+}

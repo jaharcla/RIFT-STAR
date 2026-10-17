@@ -228,6 +228,30 @@
       "bytes": 1778129,
       "release_type": 1,
       "sha256": "6b251e60a4719c874da89d750af97aa6498f6f4475e3ae79cb1288c7bf0cb65c"
+    },
+    {
+      "id": "patchouli",
+      "file": "Patchouli-1.20.1-81-FORGE.jar",
+      "side": "both",
+      "project_id": 306770,
+      "file_id": 4636277,
+      "source": "https://www.curseforge.com/minecraft/mc-mods/patchouli/files/4636277",
+      "download": "https://mediafilez.forgecdn.net/files/4636/277/Patchouli-1.20.1-81-FORGE.jar",
+      "bytes": 637092,
+      "release_type": 1,
+      "sha256": "979c6466c5a1c0151e8c9791a08bf5d2a42c2ec4c7fa8c4b9a34bb071b175753"
+    },
+    {
+      "id": "packetfixer",
+      "file": "packetfixer-3.3.2-1.18-1.20.4-merged.jar",
+      "side": "both",
+      "project_id": 689467,
+      "file_id": 7872374,
+      "source": "https://www.curseforge.com/minecraft/mc-mods/packet-fixer/files/7872374",
+      "download": "https://mediafilez.forgecdn.net/files/7872/374/packetfixer-3.3.2-1.18-1.20.4-merged.jar",
+      "bytes": 188661,
+      "release_type": 1,
+      "sha256": "12f96ecb8e61e0b3d3f0ca5701f479904904501dd251aa7bb60205afdf6bc2ce"
     }
   ]
 }

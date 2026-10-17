@@ -1,0 +1,16 @@
+{
+  "name": "Prismara",
+  "icon": "blue_skies:diopside_gem",
+  "category": "riftstar:fractured_atlas",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Use Blue Skies' native portal route to reach Everbright. Recover a diopside gem there; the Atlas treats this as evidence, not a shortcut."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "kubejs:prism_lens",
+      "text": "Combine a diopside gem, an Ad Astra steel plate, and an amethyst shard to craft the Prism Lens."
+    }
+  ]
+}

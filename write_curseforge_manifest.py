@@ -36,7 +36,7 @@ def main() -> None:
         "manifestType": "minecraftModpack",
         "manifestVersion": 1,
         "name": "RIFT//STAR: The Fractured Cosmos",
-        "version": "0.2.1",
+        "version": "0.2.2-ATLAS",
         "author": "RIFT//STAR",
         "files": files,
         "overrides": "overrides",

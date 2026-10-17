@@ -1,0 +1,17 @@
+{
+  "name": "The First Fracture",
+  "icon": "minecraft:amethyst_shard",
+  "category": "riftstar:fractured_atlas",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Begin in the Overworld and follow the first-colour advancement. The Atlas records discoveries; it does not replace any mod's native progression."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:amethyst_shard",
+      "title": "Carry a shard",
+      "text": "An amethyst shard is one of the three components used to make the Prism Lens."
+    }
+  ]
+}

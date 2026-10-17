@@ -40,7 +40,7 @@ The client profile uses Embeddium. The server omits it. The files marked `deferr
 
 1. Run `python fetch_mods.py` to restore the exact pinned mod jars.
 2. Build the companion with Java 17 and run `python assemble_client.py` for a local client tree.
-3. Run `python package_alpha.py` to create `dist/RIFTSTAR-0.2.1-alpha.zip` for CurseForge import.
+3. Run `python package_alpha.py` to create `dist/RIFTSTAR-0.2.2-ATLAS.zip` for CurseForge import.
 
 RIFT//STAR's optional discovery threads celebrate Ad Astra's Moon, The
 Bumblezone, and Alex's Caves' Primordial Caves while preserving each mod's
@@ -72,7 +72,6 @@ See `docs/alpha-installation.md` for the short installation procedure and
 ## Unfinished systems
 
 - Rift travel mechanics
-- Atlas mechanics
 - Client smoke/regression verification beyond reported historical checks
 
 ## Automated validation
