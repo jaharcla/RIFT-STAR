@@ -1,0 +1,28 @@
+{
+  "parent": "riftstar:prismara_discovered",
+  "display": {
+    "icon": {
+      "item": "blue_skies:diopside_gem"
+    },
+    "title": "A Gemstone in Everbright",
+    "description": "Recover a verified Everbright diopside gem.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "obtain_diopside": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "blue_skies:diopside_gem"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

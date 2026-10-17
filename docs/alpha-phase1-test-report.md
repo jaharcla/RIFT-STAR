@@ -1,12 +1,14 @@
-# Alpha 0.1 Phase 1 test report
+# Alpha 0.1 runtime test report
 
-This report records the reproducible commands used for the Phase 1 foundation.
+This report records the reproducible commands used for the Phase 1 foundation
+and the Phase 2-4 Prismara expedition slice.
 Generated jars, Forge libraries, downloaded mods, logs, and ZIP files are not
 tracked in Git.
 
 ## Environment
 
-- Repository baseline: `main` at the Phase 1 implementation merge base
+- Repository baseline: `jaharcla-alpha-runtime-packaging`, targeted by this
+  branch because Phase 1 is not merged to `main`
 - Target Minecraft: 1.20.1
 - Target Forge: 47.4.10
 - Required Java: 17
@@ -26,15 +28,20 @@ tracked in Git.
 | `python package_alpha.py` | Pass; creates and validates `dist/RIFTSTAR-0.1.0-alpha.zip` (13,431 bytes in this run). |
 | `server/run.bat` with Java 17, bounded to 90 seconds | Passes startup: Forge reaches `Done (14.972s)!`; the process is then stopped by the test timeout because it is a long-running server. |
 | `python -m py_compile *.py riftstar-companion/build_local.py` | Validates Python syntax. |
+| `python validate_progression.py` | Pass; validates four advancement nodes, referenced IDs, pack metadata, recipe IDs, and an acyclic graph. |
+| `python -m json.tool kubejs/data/riftstar/advancements/*.json` | Pass; advancement JSON is syntactically valid. |
+| Pinned Blue Skies and Ad Astra jar inspection | Pass; facts and exact paths recorded in `docs/prismara-facts.md`. |
+| `server/run.bat --nogui` (bounded smoke) | Pass; `server/logs/latest.log` records zero KubeJS startup/server script errors, one added recipe with zero failures, and Forge `Done (15.472s)!`. |
 
 ## Runtime blockers
 
-The manual client checklist in `docs/alpha-client-checklist.md` requires a
-graphical Minecraft launcher and cannot be completed headlessly. The local
-headless server reached a clean `Done` line, but client title-screen and
-multiplayer checks remain manual. Forge or CurseForge network availability can
-also block dependency restoration; the lockfile hashes detect incomplete or
-substituted downloads.
+The headless server smoke test passed startup and script/recipe registration;
+it does not prove gameplay. The manual client
+checklist in `docs/alpha-client-checklist.md` requires a graphical Minecraft
+launcher and is **Not run**. Native portal travel, client rendering, Prism Lens
+crafting in JEI, and two-player acceptance are **Not run**. Forge or CurseForge
+network availability can also block dependency restoration; the lockfile hashes
+detect incomplete or substituted downloads.
 
-No gameplay, KubeJS recipes/advancements, or `docs/atlas-design.md` files are
-changed by Phase 1 packaging work.
+No gameplay runtime pass is claimed without log evidence. `docs/atlas-design.md`
+was not edited.

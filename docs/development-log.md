@@ -12,6 +12,11 @@
 - Loaded, force-loaded, unloaded, saved, and reloaded chunks in Everbright, Everdawn, and all 11 packaged Ad Astra dimensions. KubeJS registered the item and added one recipe with zero script or recipe errors.
 - The client and physical travel are still untested. The companion Gradle build fails during ForgeGradle access transformation before source compilation. The Java 17 fallback build compiles the companion class, packages the mod metadata, and was recognized by Forge as a valid mod on a clean server boot.
 - Created an isolated CurseForge profile `RIFTSTAR - The Fractured Cosmos` with Forge 47.4.10; all 15 client jars match the project copies by SHA-256. CurseForge did not expose a launchable window in this environment, so title-screen testing remains open.
+- Inspected the pinned Blue Skies and Ad Astra jars directly and recorded the
+  exact native Everbright, diopside, and steel plate paths in
+  `docs/prismara-facts.md`.
+- Added the four-node Prismara advancement graph, stable `kubejs:prism_lens`
+  recipe validation, language entries, and player-facing documentation.
 
 ## Milestone ledger
 

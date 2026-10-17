@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:compass"
+    },
+    "title": "A Fracture in the Sky",
+    "description": "Begin tracing the colour beyond the Overworld.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false,
+    "background": "minecraft:textures/block/amethyst_block.png"
+  },
+  "criteria": {
+    "overworld_presence": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "dimension": "minecraft:overworld"
+      }
+    }
+  }
+}
