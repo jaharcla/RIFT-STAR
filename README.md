@@ -38,13 +38,16 @@ The client profile uses Embeddium. The server omits it. The files marked `deferr
 
 ## Assemble a playable client
 
-1. Run `python bootstrap_forge.py` to obtain Forge installer assets.
-2. Place this repository's `config/`, `defaultconfigs/`, `kubejs/`, and `resourcepacks/` into the target Forge 1.20.1 instance.
-3. Place downloaded mod jars in `mods/` according to `mods.lock.json`.
+1. Run `python fetch_mods.py` to restore the exact pinned mod jars.
+2. Build the companion with Java 17 and run `python assemble_client.py` for a local client tree.
+3. Run `python package_alpha.py` to create `dist/RIFTSTAR-0.1.0-alpha.zip` for CurseForge import.
 
 Client files can be copied into any Forge 1.20.1 instance; no machine-specific
 directory is required. Client title-screen testing remains pending in this
 environment.
+
+See `docs/alpha-installation.md` for the short installation procedure and
+`docs/alpha-client-checklist.md` for the manual smoke checklist.
 
 ## Assemble the dedicated server
 
@@ -70,7 +73,7 @@ environment.
 ```text
 python validate_mods_lock.py
 python -m json.tool mods.lock.json
-python -m py_compile assemble_server.py bootstrap_forge.py check_mod_dependencies.py fetch_mods.py inspect_mods.py make_icon.py validate_mods_lock.py write_curseforge_manifest.py write_modlist.py
+python -m py_compile assemble_client.py assemble_server.py bootstrap_forge.py check_mod_dependencies.py fetch_mods.py inspect_mods.py make_icon.py package_alpha.py validate_mods_lock.py write_curseforge_manifest.py write_modlist.py
 python write_curseforge_manifest.py
 ```
 

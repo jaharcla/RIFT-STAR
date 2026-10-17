@@ -1,6 +1,7 @@
 # Generated / downloaded content
 /mods/
 /server/
+/client/
 /run/
 /libraries/
 /.gradle/
