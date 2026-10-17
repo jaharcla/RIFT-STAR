@@ -1,0 +1,22 @@
+{
+  "parent": "riftstar:root",
+  "display": {
+    "icon": {
+      "item": "blue_skies:everbright_portal"
+    },
+    "title": "Prismara",
+    "description": "Cross the native Blue Skies route into Everbright.",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "enter_everbright": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "blue_skies:everbright"
+      }
+    }
+  }
+}

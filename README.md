@@ -72,6 +72,7 @@ See `docs/alpha-installation.md` for the short installation procedure and
 
 ```text
 python validate_mods_lock.py
+python validate_progression.py
 python -m json.tool mods.lock.json
 python -m py_compile assemble_client.py assemble_server.py bootstrap_forge.py check_mod_dependencies.py fetch_mods.py inspect_mods.py make_icon.py package_alpha.py validate_mods_lock.py write_curseforge_manifest.py write_modlist.py
 python write_curseforge_manifest.py

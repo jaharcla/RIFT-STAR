@@ -1,4 +1,5 @@
 {
+  "parent": "riftstar:prismara_resource",
   "display": {
     "icon": { "item": "kubejs:prism_lens" },
     "title": "The First Colour",
