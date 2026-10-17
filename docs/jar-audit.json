@@ -1,0 +1,586 @@
+[
+  {
+    "name": "ad_astra",
+    "mod_ids": [
+      "ad_astra"
+    ],
+    "version": [
+      "1.15.21"
+    ],
+    "dependencies": [
+      {
+        "owner": "ad_astra",
+        "id": "forge",
+        "mandatory": true,
+        "range": "[47,)",
+        "side": "BOTH"
+      },
+      {
+        "owner": "ad_astra",
+        "id": "minecraft",
+        "mandatory": true,
+        "range": "[1.20.1,)",
+        "side": "BOTH"
+      },
+      {
+        "owner": "ad_astra",
+        "id": "resourcefullib",
+        "mandatory": true,
+        "range": "[2.1.23,)",
+        "side": "BOTH"
+      },
+      {
+        "owner": "ad_astra",
+        "id": "resourcefulconfig",
+        "mandatory": true,
+        "range": "[2.1.0,)",
+        "side": "BOTH"
+      },
+      {
+        "owner": "ad_astra",
+        "id": "botarium",
+        "mandatory": true,
+        "range": "[2.3.0,)",
+        "side": "BOTH"
+      }
+    ],
+    "dimensions": [
+      "data/ad_astra/dimension/earth_orbit.json",
+      "data/ad_astra/dimension/glacio.json",
+      "data/ad_astra/dimension/glacio_orbit.json",
+      "data/ad_astra/dimension/mars.json",
+      "data/ad_astra/dimension/mars_orbit.json",
+      "data/ad_astra/dimension/mercury.json",
+      "data/ad_astra/dimension/mercury_orbit.json",
+      "data/ad_astra/dimension/moon.json",
+      "data/ad_astra/dimension/moon_orbit.json",
+      "data/ad_astra/dimension/venus.json",
+      "data/ad_astra/dimension/venus_orbit.json"
+    ],
+    "dimension_types": [
+      "data/ad_astra/dimension_type/earth_orbit.json",
+      "data/ad_astra/dimension_type/glacio.json",
+      "data/ad_astra/dimension_type/glacio_orbit.json",
+      "data/ad_astra/dimension_type/mars.json",
+      "data/ad_astra/dimension_type/mars_orbit.json",
+      "data/ad_astra/dimension_type/mercury.json",
+      "data/ad_astra/dimension_type/mercury_orbit.json",
+      "data/ad_astra/dimension_type/moon.json",
+      "data/ad_astra/dimension_type/moon_orbit.json",
+      "data/ad_astra/dimension_type/venus.json",
+      "data/ad_astra/dimension_type/venus_orbit.json"
+    ]
+  },
+  {
+    "name": "botarium",
+    "mod_ids": [
+      "botarium"
+    ],
+    "version": [
+      "2.3.4"
+    ],
+    "dependencies": [
+      {
+        "owner": "botarium",
+        "id": "forge",
+        "mandatory": true,
+        "range": "[47,)",
+        "side": "BOTH"
+      },
+      {
+        "owner": "botarium",
+        "id": "minecraft",
+        "mandatory": true,
+        "range": "[1.20,)",
+        "side": "BOTH"
+      }
+    ],
+    "dimensions": [],
+    "dimension_types": []
+  },
+  {
+    "name": "resourcefulconfig",
+    "mod_ids": [
+      "resourcefulconfig"
+    ],
+    "version": [
+      "2.1.3"
+    ],
+    "dependencies": [
+      {
+        "owner": "resourcefulconfig",
+        "id": "forge",
+        "mandatory": true,
+        "range": "[46,)",
+        "side": "BOTH"
+      },
+      {
+        "owner": "resourcefulconfig",
+        "id": "minecraft",
+        "mandatory": true,
+        "range": "[1.20,)",
+        "side": "BOTH"
+      }
+    ],
+    "dimensions": [],
+    "dimension_types": []
+  },
+  {
+    "name": "resourcefullib",
+    "mod_ids": [
+      "resourcefullib"
+    ],
+    "version": [
+      "2.1.29"
+    ],
+    "dependencies": [
+      {
+        "owner": "resourcefullib",
+        "id": "forge",
+        "mandatory": true,
+        "range": "[46,)",
+        "side": "BOTH"
+      },
+      {
+        "owner": "resourcefullib",
+        "id": "minecraft",
+        "mandatory": true,
+        "range": "[1.20,)",
+        "side": "BOTH"
+      }
+    ],
+    "dimensions": [],
+    "dimension_types": []
+  },
+  {
+    "name": "blue_skies",
+    "mod_ids": [
+      "blue_skies"
+    ],
+    "version": [
+      "${file.jarVersion}"
+    ],
+    "dependencies": [
+      {
+        "owner": "blue_skies",
+        "id": "forge",
+        "mandatory": true,
+        "range": "[47.1.0,)",
+        "side": "BOTH"
+      },
+      {
+        "owner": "blue_skies",
+        "id": "minecraft",
+        "mandatory": true,
+        "range": "[1.20.1,1.21]",
+        "side": "BOTH"
+      },
+      {
+        "owner": "blue_skies",
+        "id": "structure_gel",
+        "mandatory": true,
+        "range": "[2.13.0,]",
+        "side": "BOTH"
+      }
+    ],
+    "dimensions": [
+      "data/blue_skies/dimension/everbright.json",
+      "data/blue_skies/dimension/everdawn.json"
+    ],
+    "dimension_types": [
+      "data/blue_skies/dimension_type/everbright.json",
+      "data/blue_skies/dimension_type/everdawn.json"
+    ]
+  },
+  {
+    "name": "structure_gel",
+    "mod_ids": [
+      "structure_gel"
+    ],
+    "version": [
+      "${file.jarVersion}"
+    ],
+    "dependencies": [
+      {
+        "owner": "structure_gel",
+        "id": "forge",
+        "mandatory": true,
+        "range": "[47.1.0,)",
+        "side": "BOTH"
+      },
+      {
+        "owner": "structure_gel",
+        "id": "minecraft",
+        "mandatory": true,
+        "range": "1.20.1",
+        "side": "BOTH"
+      }
+    ],
+    "dimensions": [],
+    "dimension_types": []
+  },
+  {
+    "name": "alexscaves",
+    "mod_ids": [
+      "alexscaves"
+    ],
+    "version": [
+      "2.0.2"
+    ],
+    "dependencies": [
+      {
+        "owner": "alexscaves",
+        "id": "citadel",
+        "mandatory": true,
+        "range": "[2.6.0,)",
+        "side": "BOTH"
+      },
+      {
+        "owner": "alexscaves",
+        "id": "forge",
+        "mandatory": true,
+        "range": "[47.1.3,)",
+        "side": "BOTH"
+      }
+    ],
+    "dimensions": [],
+    "dimension_types": []
+  },
+  {
+    "name": "citadel",
+    "mod_ids": [
+      "citadel"
+    ],
+    "version": [
+      "2.6.3"
+    ],
+    "dependencies": [
+      {
+        "owner": "citadel",
+        "id": "forge",
+        "mandatory": true,
+        "range": "[47.0.34,)",
+        "side": "BOTH"
+      }
+    ],
+    "dimensions": [],
+    "dimension_types": []
+  },
+  {
+    "name": "worldportal",
+    "mod_ids": [
+      "worldportal"
+    ],
+    "version": [
+      "0.0.11+1.20.1"
+    ],
+    "dependencies": [
+      {
+        "owner": "worldportal",
+        "id": "forge",
+        "mandatory": true,
+        "range": "[47,)",
+        "side": "BOTH"
+      },
+      {
+        "owner": "worldportal",
+        "id": "minecraft",
+        "mandatory": true,
+        "range": "[1.20.1,)",
+        "side": "BOTH"
+      }
+    ],
+    "dimensions": [],
+    "dimension_types": []
+  },
+  {
+    "name": "kubejs",
+    "mod_ids": [
+      "kubejs"
+    ],
+    "version": [
+      "2001.6.5-build.26"
+    ],
+    "dependencies": [
+      {
+        "owner": "kubejs",
+        "id": "forge",
+        "mandatory": true,
+        "range": "[47.1.0,)",
+        "side": "BOTH"
+      },
+      {
+        "owner": "kubejs",
+        "id": "rhino",
+        "mandatory": true,
+        "range": "[2001.2.2-build.1,)",
+        "side": "BOTH"
+      },
+      {
+        "owner": "kubejs",
+        "id": "architectury",
+        "mandatory": true,
+        "range": "[9.1.12,)",
+        "side": "BOTH"
+      },
+      {
+        "owner": "kubejs",
+        "id": "jei",
+        "mandatory": false,
+        "range": "[1.0.0,)",
+        "side": "BOTH"
+      },
+      {
+        "owner": "kubejs",
+        "id": "roughlyenoughitems",
+        "mandatory": false,
+        "range": "[9.1.572,)",
+        "side": "BOTH"
+      }
+    ],
+    "dimensions": [],
+    "dimension_types": []
+  },
+  {
+    "name": "rhino",
+    "mod_ids": [
+      "rhino"
+    ],
+    "version": [
+      "2001.2.3-build.10"
+    ],
+    "dependencies": [],
+    "dimensions": [],
+    "dimension_types": []
+  },
+  {
+    "name": "architectury",
+    "mod_ids": [
+      "architectury"
+    ],
+    "version": [
+      "9.2.14"
+    ],
+    "dependencies": [
+      {
+        "owner": "architectury",
+        "id": "minecraft",
+        "mandatory": true,
+        "range": "[1.20,)",
+        "side": "BOTH"
+      },
+      {
+        "owner": "architectury",
+        "id": "forge",
+        "mandatory": true,
+        "range": "[46,)",
+        "side": "BOTH"
+      }
+    ],
+    "dimensions": [],
+    "dimension_types": []
+  },
+  {
+    "name": "embeddium",
+    "mod_ids": [
+      "embeddium",
+      "rubidium"
+    ],
+    "version": [
+      "0.3.31+mc1.20.1",
+      "0.7.1"
+    ],
+    "dependencies": [
+      {
+        "owner": "embeddium",
+        "id": "oculus",
+        "mandatory": false,
+        "range": "(1.6.15,)",
+        "side": "CLIENT"
+      },
+      {
+        "owner": "embeddium",
+        "id": "textrues_embeddium_options",
+        "mandatory": false,
+        "range": "[0.0.0-NOT-COMPATIBLE]",
+        "side": "CLIENT"
+      }
+    ],
+    "dimensions": [],
+    "dimension_types": []
+  },
+  {
+    "name": "modernfix",
+    "mod_ids": [
+      "modernfix"
+    ],
+    "version": [
+      "5.27.88+mc1.20.1"
+    ],
+    "dependencies": [
+      {
+        "owner": "modernfix",
+        "id": "forge",
+        "mandatory": true,
+        "range": "[46.0.1,)",
+        "side": "BOTH"
+      },
+      {
+        "owner": "modernfix",
+        "id": "minecraft",
+        "mandatory": true,
+        "range": "[1.20, 1.21)",
+        "side": "BOTH"
+      },
+      {
+        "owner": "modernfix",
+        "id": "jei",
+        "mandatory": false,
+        "range": "[15.8.0.11,)",
+        "side": "CLIENT"
+      }
+    ],
+    "dimensions": [],
+    "dimension_types": []
+  },
+  {
+    "name": "the_bumblezone",
+    "mod_ids": [
+      "the_bumblezone"
+    ],
+    "version": [
+      "7.14.0+1.20.1-forge"
+    ],
+    "dependencies": [
+      {
+        "owner": "the_bumblezone",
+        "id": "minecraft",
+        "mandatory": true,
+        "range": "[1.20.1,)",
+        "side": "BOTH"
+      },
+      {
+        "owner": "the_bumblezone",
+        "id": "forge",
+        "mandatory": true,
+        "range": "[47.1.0,47.1.4],[47.1.43,)",
+        "side": "BOTH"
+      },
+      {
+        "owner": "the_bumblezone",
+        "id": "curios",
+        "mandatory": false,
+        "range": "[5.3.1+1.20.1,)",
+        "side": "BOTH"
+      },
+      {
+        "owner": "the_bumblezone",
+        "id": "productivebees",
+        "mandatory": false,
+        "range": "[0,)",
+        "side": "BOTH"
+      },
+      {
+        "owner": "the_bumblezone",
+        "id": "resourcefulbees",
+        "mandatory": false,
+        "range": "[0,)",
+        "side": "BOTH"
+      },
+      {
+        "owner": "the_bumblezone",
+        "id": "ars_nouveau",
+        "mandatory": false,
+        "range": "[1.20.1-4.9.0.152,)",
+        "side": "BOTH"
+      },
+      {
+        "owner": "the_bumblezone",
+        "id": "structureessentials",
+        "mandatory": false,
+        "range": "(,1.20.1-4.5),(1.20.1-4.5,)",
+        "side": "BOTH"
+      }
+    ],
+    "dimensions": [
+      "data/the_bumblezone/dimension/the_bumblezone.json"
+    ],
+    "dimension_types": [
+      "data/the_bumblezone/dimension_type/the_bumblezone.json"
+    ]
+  },
+  {
+    "name": "ferritecore",
+    "mod_ids": [
+      "ferritecore"
+    ],
+    "version": [
+      "${file.jarVersion}"
+    ],
+    "dependencies": [
+      {
+        "owner": "ferritecore",
+        "id": "forge",
+        "mandatory": true,
+        "range": "[46.0.1,)",
+        "side": "BOTH"
+      },
+      {
+        "owner": "ferritecore",
+        "id": "minecraft",
+        "mandatory": true,
+        "range": "[1.20,1.21)",
+        "side": "BOTH"
+      }
+    ],
+    "dimensions": [],
+    "dimension_types": []
+  },
+  {
+    "name": "jade",
+    "mod_ids": [
+      "jade"
+    ],
+    "version": [
+      "${file.jarVersion}"
+    ],
+    "dependencies": [
+      {
+        "owner": "jade",
+        "id": "forge",
+        "mandatory": true,
+        "range": "[46, )",
+        "side": "BOTH"
+      }
+    ],
+    "dimensions": [],
+    "dimension_types": []
+  },
+  {
+    "name": "jei",
+    "mod_ids": [
+      "jei"
+    ],
+    "version": [
+      "15.56.0.205"
+    ],
+    "dependencies": [
+      {
+        "owner": "jei",
+        "id": "forge",
+        "mandatory": true,
+        "range": "[47.0,)",
+        "side": "BOTH"
+      },
+      {
+        "owner": "jei",
+        "id": "minecraft",
+        "mandatory": true,
+        "range": "[1.20.1, 1.20.2)",
+        "side": "BOTH"
+      }
+    ],
+    "dimensions": [],
+    "dimension_types": []
+  }
+]
