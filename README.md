@@ -12,7 +12,7 @@ Minecraft Java 1.20.1 / Forge 47.4.10 foundation. Java 17 required.
 
 The client profile uses Embeddium. The server omits it. The files marked `deferred` in `mods.lock.json` are audited but not installed.
 
-An isolated local CurseForge profile is installed at `C:\Users\Owner\curseforge\minecraft\Instances\RIFTSTAR - The Fractured Cosmos` with Forge 47.4.10. Client title-screen testing remains pending.
+Client title-screen testing remains pending.
 
 ## Current slice
 
@@ -24,3 +24,26 @@ An isolated local CurseForge profile is installed at `C:\Users\Owner\curseforge\
 See `docs/compatibility-audit.md`, `docs/development-log.md`, `docs/test-matrix.md`, and `docs/destinations.md`.
 
 **GitHub import status:** Core scripts and some code have been committed, but not every source-archive file has been imported yet. The original upload is retained separately. No bundled third-party mod JARs or server save data are tracked.
+
+## Distribution artifact generation
+
+`python write_curseforge_manifest.py` generates `dist/curseforge/manifest.json` directly from `mods.lock.json`.
+
+- Includes `side: both` and `side: client` entries.
+- Excludes `side: server` and `side: deferred` entries.
+- Uses CurseForge `projectID`/`fileID` references only; no third-party JARs are bundled.
+
+CurseForge manifest format is used because the lockfile already tracks CurseForge project/file IDs for every pinned file.
+
+## Lockfile validation
+
+- `python validate_mods_lock.py` validates required fields, side values, duplicate IDs, and SHA-256 requirements.
+- `python check_mod_dependencies.py` validates mandatory declared mod dependencies after `python inspect_mods.py` generates `docs/jar-audit.json`.
+- Deferred entries are hash-optional by rule; `oculus` is intentionally `side: deferred` without a checksum.
+
+## Repository housekeeping TODOs
+
+- **Canonical project name proposal (pending approval):** `RIFT//STAR: The Fractured Cosmos`.
+- **Suggested repository description:** `Reproducible Minecraft 1.20.1 Forge modpack source for RIFT//STAR: The Fractured Cosmos`.
+- **Suggested repository topics:** `minecraft`, `minecraft-modpack`, `forge`, `java17`, `kubejs`, `curseforge`, `modpack-dev`.
+- **License:** TODO — maintainer decision required.

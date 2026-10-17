@@ -22,3 +22,25 @@
 | First artifact + cross-mod recipe | Registered on server; in-game craft untested |
 | Companion mod skeleton | Java 17 fallback jar built and loaded; Gradle build blocked |
 | Persistent anomaly and Atlas mechanics | Future |
+
+## 2026-10-17 — Task pass follow-up
+
+- Companion ForgeGradle diagnosis in this repo is currently blocked by missing source-import files under `riftstar-companion/`: no `build.gradle`, no Gradle wrapper scripts, and no `src/main/resources/META-INF/mods.toml` are present to execute or compare against the Forge 47.4.10 MDK.
+- Verified local Java toolchain in this environment is Java 17 (`java`/`javac` 17.0.20.1 with `JAVA_HOME=/usr/lib/jvm/temurin-17-jdk-amd64`).
+- `riftstar-companion/build_local.py` remains in place as fallback, but still depends on missing Forge server libraries (`server/libraries/...`) and missing companion resource metadata (`mods.toml`) to produce a loadable mod jar.
+- Attempted Forge MDK metadata retrieval and mod fetch/server assembly flow, but outbound resolution to Forge/CurseForge hosts failed in this sandbox, so launch verification here remained blocked.
+- Added lockfile/CI automation and distribution-manifest generation scripts (see repository root scripts and `.github/workflows/lockfile-validation.yml`).
+
+### Source-import gaps observed from README/docs references vs. repository contents
+
+- Missing referenced file: `docs/compatibility-audit.md` (README references it directly).
+- Missing expected generated file: `docs/jar-audit.json` (referenced by `docs/test-matrix.md` and produced by `inspect_mods.py` only after jars are downloaded and inspected).
+- Missing companion Forge project files referenced by companion README/build flow:
+  - `riftstar-companion/build.gradle`
+  - `riftstar-companion/gradlew`
+  - `riftstar-companion/gradlew.bat`
+  - `riftstar-companion/src/main/resources/META-INF/mods.toml`
+
+### Example local path moved from README
+
+- Example only: `C:\Users\Owner\curseforge\minecraft\Instances\RIFTSTAR - The Fractured Cosmos`

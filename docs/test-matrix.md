@@ -17,3 +17,17 @@
 | Client launch + join | Pending | CurseForge window unavailable from this environment; title screen and in-game crafting unverified |
 
 Chunk loading proves these dimensions can generate and persist server-side. It does not prove their client rendering or native travel flow.
+
+## Client verification checklist (fallback when automated launch is unavailable)
+
+- [ ] Reach title screen on Forge 47.4.10 with no missing-mod or mixin crash.
+- [ ] Create a new single-player world and confirm spawn completes.
+- [ ] Craft Prism Lens from `blue_skies:diopside_gem` + `ad_astra:steel_plate`.
+- [ ] Pick up Prism Lens and verify `riftstar:first_colour` advancement is granted.
+- [ ] Visit Blue Skies Everbright for first-time portal travel/render verification.
+- [ ] Visit Blue Skies Everdawn for first-time portal travel/render verification.
+- [ ] Visit Ad Astra Moon by native rocket progression.
+- [ ] Visit Ad Astra Mars by native rocket progression.
+- [ ] Visit Ad Astra Glacio by native rocket progression.
+- [ ] Locate and enter Alex's Caves Candy Cavity biome (first visit event).
+- [ ] Locate and enter Alex's Caves Abyssal Chasm biome (first visit event).
