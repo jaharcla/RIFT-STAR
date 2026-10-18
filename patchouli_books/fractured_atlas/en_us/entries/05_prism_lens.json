@@ -1,0 +1,17 @@
+{
+  "name": "The Prism Lens",
+  "icon": "kubejs:prism_lens",
+  "category": "patchouli:02_discoveries",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A small cross-world relic. Bring together a diopside gem from Everbright, an Ad Astra steel plate and a vanilla amethyst shard. The lens marks a discovery; it does not gate travel."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "kubejs:prism_lens",
+      "text": "Carry the finished Prism Lens to earn the optional First Colour advancement."
+    }
+  ]
+}

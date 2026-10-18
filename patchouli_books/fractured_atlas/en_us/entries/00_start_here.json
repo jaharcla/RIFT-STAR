@@ -1,0 +1,20 @@
+{
+  "name": "Start Here",
+  "icon": "minecraft:compass",
+  "category": "patchouli:01_destinations",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Welcome to RIFT//STAR. Make a basic shelter, gather food, and bring a crafting table. Then pick ONE adventure. None of these four paths must be completed first; the world is yours to explore."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "For an early trip, find bees for the Bumblezone or hunt for a Gatekeeper house for Blue Skies. For a longer expedition, search for an Underground Cabin and a Cave Tablet. To reach other planets, follow the Ad Astra machine and rocket recipes in JEI."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Use JEI (the item list beside your inventory) to see crafting ingredients, including cross-mod alternatives. The advancement tab tracks optional discoveries. Return to this book whenever you want a new direction."
+    }
+  ]
+}

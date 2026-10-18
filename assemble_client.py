@@ -25,7 +25,7 @@ def main() -> None:
     if not companion.is_file():
         raise SystemExit(f"Missing built companion: {companion}")
     shutil.copy2(companion, CLIENT / "mods" / companion.name)
-    for name in ("config", "defaultconfigs", "kubejs", "resourcepacks"):
+    for name in ("config", "defaultconfigs", "kubejs", "resourcepacks", "patchouli_books"):
         shutil.copytree(ROOT / name, CLIENT / name, dirs_exist_ok=True)
     print(f"client mods: {len(list((CLIENT / 'mods').glob('*.jar')))}")
 

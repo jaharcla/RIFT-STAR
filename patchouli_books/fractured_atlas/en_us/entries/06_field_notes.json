@@ -1,0 +1,20 @@
+{
+  "name": "Useful Cross-Mod Finds",
+  "icon": "minecraft:amethyst_shard",
+  "category": "patchouli:02_discoveries",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Blue Skies crystal glass or midnight glass works for selected Ad Astra glass components. Sunstone crystals can substitute in some Ad Astra decorative light recipes."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Snowcap mushrooms from Blue Skies and frostmint from Alex's Caves can feed the Ad Astra Cryo Freezer. Guano plus Bumblezone pollen plus bone meal can become cave fertilizer; two sticky honey residues and a piston make a sticky piston."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Blue Skies raw meats count for some Primordial equipment interactions, and certain Alex's Caves candies can lure Honey Slimes. Some Blue Skies dungeon library loot can contain cave tablets. Every cross-mod connection is optional: search JEI for exact recipes."
+    }
+  ]
+}

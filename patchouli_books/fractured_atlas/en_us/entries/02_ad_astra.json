@@ -1,0 +1,20 @@
+{
+  "name": "Ad Astra: First Rocket",
+  "icon": "minecraft:iron_ingot",
+  "category": "patchouli:01_destinations",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Your first space voyage is a longer-term goal. Start by searching JEI for Ad Astra machines and the NASA Workbench. You will need metal processing, steel and other components before you can build a Tier 1 rocket."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Plan for fuel and life support, not just the rocket. Search JEI for the Fuel Refinery, Oxygen Loader, Space Suit and related equipment, and follow Ad Astra's native progression. The Moon is the first destination to aim for."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "RIFT//STAR lets certain Blue Skies glasses substitute for ordinary glass in Ad Astra components. Sunstone can also contribute to decorative lighting; see Field Notes for more connections."
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Bumblezone: Into the Hive",
+  "icon": "minecraft:honeycomb",
+  "category": "patchouli:01_destinations",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Find a Bee Nest or crafted Beehive in the Overworld. Throw an Ender Pearl directly at it to enter the Bumblezone. Bring equipment and food; the world inside is much stranger than an ordinary bee colony."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "To leave, descend below Y=0 or rise above Y=256. The mod tries to return you to where you entered. Look for its honey structures, bee creatures and unusual items, and be careful how you treat the hive."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Some Bumblezone pollen and honey materials also have optional RIFT//STAR uses. Check Field Notes and JEI rather than assuming they exist only for bee-related recipes."
+    }
+  ]
+}

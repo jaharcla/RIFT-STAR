@@ -1,0 +1,20 @@
+{
+  "name": "Blue Skies: First Portal",
+  "icon": "blue_skies:diopside_gem",
+  "category": "patchouli:01_destinations",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Search the Overworld for a Gatekeeper house. These special structures contain a Gatekeeper villager and an unlit portal leading to Everbright OR Everdawn. Look in plains, mountain, or snowy regions."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Bring emeralds. Trade with the Gatekeeper for a Zeal Lighter, then use it to ignite the portal frame in his house. Bring food, basic gear and a way to mark your return. The Gatekeeper also offers a Blue Journal for deeper advice."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "In Everbright, collect diopside gems as part of the optional Prism Lens discovery. Blue Skies has its own dungeons, progression and bosses; the Atlas does not replace them."
+    }
+  ]
+}

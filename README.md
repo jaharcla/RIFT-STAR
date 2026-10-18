@@ -40,7 +40,7 @@ The client profile uses Embeddium. The server omits it. The files marked `deferr
 
 1. Run `python fetch_mods.py` to restore the exact pinned mod jars.
 2. Build the companion with Java 17 and run `python assemble_client.py` for a local client tree.
-3. Run `python package_alpha.py` to create `dist/RIFTSTAR-0.2.2-ATLAS.zip` for CurseForge import.
+3. Run `python package_alpha.py` to create `dist/RIFTSTAR-0.2.3-ATLAS-FIX.zip` for CurseForge import.
 
 RIFT//STAR's optional discovery threads celebrate Ad Astra's Moon, The
 Bumblezone, and Alex's Caves' Primordial Caves while preserving each mod's
@@ -103,3 +103,5 @@ See `docs/compatibility-audit.md`, `docs/development-log.md`, `docs/test-matrix.
 
 The source baseline and companion project are restored. No bundled third-party
 mod JARs or server save data are tracked.
+
+The Fractured Atlas is packaged in the root-level `patchouli_books/fractured_atlas` directory, which Patchouli loads as the standalone `patchouli:fractured_atlas` book. The KubeJS first-join script gives the correct NBT-bearing guidebook. Do not relocate it into KubeJS's data or assets folders.

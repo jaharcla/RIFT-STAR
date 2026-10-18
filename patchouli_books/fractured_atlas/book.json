@@ -1,0 +1,10 @@
+{
+  "name": "The Fractured Atlas",
+  "landing_text": "The cosmos is fractured, but its paths are open. Begin with Start Here, then choose a destination: luminous skies, ancient caves, starbound technology, or the world inside a beehive. Each route is optional. Follow your curiosity.",
+  "version": 2,
+  "model": "patchouli:book_purple",
+  "book_texture": "patchouli:textures/gui/book_purple.png",
+  "creative_tab": "minecraft:tools_and_utilities",
+  "show_progress": false,
+  "i18n": false
+}

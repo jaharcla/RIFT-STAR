@@ -11,7 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 LOCK_PATH = ROOT / "mods.lock.json"
 COMPANION_JAR = ROOT / "riftstar-companion" / "build" / "libs" / "riftstar_companion-0.1.0.jar"
-PACKAGE_NAME = "RIFTSTAR-0.2.2-ATLAS.zip"
+PACKAGE_NAME = "RIFTSTAR-0.2.3-ATLAS-FIX.zip"
 
 
 def run(command: list[str], *, cwd: Path = ROOT) -> None:
@@ -64,7 +64,7 @@ def create_package(lock: dict) -> Path:
     run([sys.executable, "write_curseforge_manifest.py"])
     shutil.copy2(ROOT / "dist" / "curseforge" / "manifest.json", staging / "manifest.json")
     overrides = staging / "overrides"
-    for name in ("config", "defaultconfigs", "kubejs", "resourcepacks"):
+    for name in ("config", "defaultconfigs", "kubejs", "resourcepacks", "patchouli_books"):
         copy_tree(name, overrides)
     mods = overrides / "mods"
     mods.mkdir(parents=True, exist_ok=True)
@@ -92,7 +92,7 @@ def create_package(lock: dict) -> Path:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Build the RIFT//STAR Atlas 0.2.2 CurseForge pack.")
+    parser = argparse.ArgumentParser(description="Build the RIFT//STAR Atlas 0.2.3 CurseForge pack.")
     parser.add_argument(
         "--restore",
         action="store_true",
@@ -113,6 +113,7 @@ def main() -> None:
             "overrides/defaultconfigs",
             "overrides/kubejs",
             "overrides/resourcepacks",
+            "overrides/patchouli_books",
             "overrides/mods/" + COMPANION_JAR.name,
         }
         names = set(archive.namelist())

@@ -1,11 +1,11 @@
-const ATLAS_BOOK = 'riftstar:fractured_atlas'
+// Patchouli standalone modpack books in /patchouli_books use the patchouli: namespace.
+// The old riftstar:fractured_atlas ID was not registered.
+const ATLAS_BOOK = 'patchouli:fractured_atlas'
 const ATLAS_ITEM = 'patchouli:guide_book'
-const DELIVERED_KEY = 'riftstar_atlas_delivered'
 
 function atlasBook() {
   return Item.of(ATLAS_ITEM, { 'patchouli:book': ATLAS_BOOK })
 }
-
 function hasAtlasBook(player) {
   let found = false
   player.inventory.allItems.forEach(stack => {
@@ -14,12 +14,12 @@ function hasAtlasBook(player) {
   })
   return found
 }
-
 PlayerEvents.loggedIn(event => {
-  let player = event.player
-  let delivered = player.persistentData.getBoolean(DELIVERED_KEY)
-  if (!delivered || !hasAtlasBook(player)) {
-    player.give(atlasBook())
-    player.persistentData.putBoolean(DELIVERED_KEY, true)
-  }
+  const player = event.player
+  // Give existing players the correct book even if they have an invalid old copy.
+  if (!hasAtlasBook(player)) player.give(atlasBook())
+})
+ServerEvents.recipes(event => {
+  event.shapeless(atlasBook(), ['minecraft:book', 'minecraft:amethyst_shard'])
+    .id('riftstar:fractured_atlas_manual')
 })

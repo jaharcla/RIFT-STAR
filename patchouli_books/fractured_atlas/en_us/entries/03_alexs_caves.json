@@ -1,0 +1,20 @@
+{
+  "name": "Alex's Caves: Underground",
+  "icon": "minecraft:map",
+  "category": "patchouli:01_destinations",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Alex's Caves adds six rare biomes UNDER the Overworld, not separate portal dimensions. Search for an Underground Cabin. Abandoned mineshaft chests may hold cabin maps, and cartographers sometimes offer locator maps."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Cabins contain loot and a Spelunkery Table. Find Cave Tablets, then decipher them at the table to create Cave Codices. A codex can be combined with paper to make a Cave Biome Map leading to the appropriate rare cave."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Obtain the native Cave Compendium from a cabin or craft it with a book, a gold nugget and a Cave Tablet. It explains the actual cave biomes and their discoveries. Prepare for a long underground expedition."
+    }
+  ]
+}

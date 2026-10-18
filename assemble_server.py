@@ -23,7 +23,7 @@ def main():
     if companion.is_file():
         shutil.copy2(companion, ROOT / "mods" / companion.name)
         shutil.copy2(companion, SERVER / "mods" / companion.name)
-    for name in ("kubejs", "config", "defaultconfigs"):
+    for name in ("kubejs", "config", "defaultconfigs", "patchouli_books"):
         shutil.copytree(ROOT / name, SERVER / name, dirs_exist_ok=True)
     print(f"server mods: {len(list((SERVER / 'mods').glob('*.jar')))}")
 
