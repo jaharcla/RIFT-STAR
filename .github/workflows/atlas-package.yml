@@ -1,0 +1,67 @@
+name: Package Fractured Atlas
+
+on:
+  push:
+    branches:
+      - jaharcla-atlas-final-pass
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - name: Python requirements
+        run: python -m pip install -r requirements.txt
+      - name: Restore pinned mods and check pack files
+        timeout-minutes: 15
+        run: |
+          python fetch_mods.py
+          python validate_mods_lock.py
+          python validate_progression.py
+          python tests/validate_atlas.py
+      - name: Install Forge libraries for companion builder
+        timeout-minutes: 10
+        run: |
+          python bootstrap_forge.py
+          java -jar tools/forge-1.20.1-47.4.10-installer.jar --installServer server
+      - name: Build companion and Atlas package
+        timeout-minutes: 10
+        run: |
+          python riftstar-companion/build_local.py
+          python package_alpha.py
+      - name: Verify complete CurseForge ZIP contents
+        run: |
+          python - <<'PY'
+          import json, zipfile
+          from pathlib import Path
+          p = Path('dist/RIFTSTAR-0.2.3-ATLAS-FIX.zip')
+          assert p.exists()
+          with zipfile.ZipFile(p) as f:
+              names = f.namelist()
+              manifest = json.loads(f.read('manifest.json'))
+              assert manifest['version'] == '0.2.3-ATLAS-FIX'
+              assert any(e['projectID'] == 306770 for e in manifest['files'])  # Patchouli
+              assert any(e['projectID'] == 689467 for e in manifest['files'])  # Packet Fixer
+              assert 'overrides/patchouli_books/fractured_atlas/book.json' in names
+              assert 'overrides/kubejs/server_scripts/riftstar_atlas_delivery.js' in names
+              assert 'overrides/mods/riftstar_companion-0.1.0.jar' in names
+              assert not any('/data/riftstar/patchouli_books/' in n for n in names)
+          print('CurseForge Atlas ZIP validation passed')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: RIFTSTAR-0.2.3-ATLAS-FIX
+          path: dist/RIFTSTAR-0.2.3-ATLAS-FIX.zip
+          if-no-files-found: error
