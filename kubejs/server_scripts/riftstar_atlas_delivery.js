@@ -3,7 +3,7 @@ const ATLAS_ITEM = 'patchouli:guide_book'
 const DELIVERED_KEY = 'riftstar_atlas_delivered'
 
 function atlasBook() {
-  return Item.of(ATLAS_ITEM, '{patchouli:book:"' + ATLAS_BOOK + '"}')
+  return Item.of(ATLAS_ITEM, { 'patchouli:book': ATLAS_BOOK })
 }
 
 function hasAtlasBook(player) {
