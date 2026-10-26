@@ -8,6 +8,9 @@ import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.ClipContext;
+import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
@@ -140,6 +143,18 @@ public final class ForgeSuitClientBridge {
                         mob -> mob.isAlive() && mob.hasLineOfSight(player)).size();
 
         return new SuitTelemetry(tick, detected, flying, combat, health,
-                null /* no verified reactor telemetry */, hostiles);
+                null /* no verified reactor telemetry */, hostiles,
+                flying && flightObstacleAhead(player));
+    }
+
+    /** Vanilla block raycast along actual velocity. Not a Satsu physics override. */
+    private static boolean flightObstacleAhead(LocalPlayer player) {
+        Vec3 velocity = player.getDeltaMovement();
+        if (velocity.lengthSqr() < 0.09) return false; // avoid idle false alarms
+        Vec3 start = player.getEyePosition();
+        Vec3 end = start.add(velocity.normalize().scale(8.0));
+        return player.level().clip(new ClipContext(start, end,
+                ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, player))
+                .getType() == HitResult.Type.BLOCK;
     }
 }
