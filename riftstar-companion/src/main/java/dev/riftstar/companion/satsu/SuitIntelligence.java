@@ -18,6 +18,8 @@ public final class SuitIntelligence {
     private long deployedAt = -1, lastCombatAt = -1, recoveryUntil = -1;
     private long lastEnergyWarningAt = Long.MIN_VALUE / 2;
     private long lastHealthWarningAt = Long.MIN_VALUE / 2;
+    private long lastCollisionWarningAt = Long.MIN_VALUE / 2;
+    private long lastThreatWarningAt = Long.MIN_VALUE / 2;
     private long lastTick = -1;
     private boolean emergencyLatched = false;
 
@@ -34,6 +36,8 @@ public final class SuitIntelligence {
         recoveryUntil = -1;
         lastEnergyWarningAt = Long.MIN_VALUE / 2;
         lastHealthWarningAt = Long.MIN_VALUE / 2;
+        lastCollisionWarningAt = Long.MIN_VALUE / 2;
+        lastThreatWarningAt = Long.MIN_VALUE / 2;
         lastTick = -1;
         emergencyLatched = false;
     }
@@ -109,6 +113,18 @@ public final class SuitIntelligence {
                     : SuitAdvisory.Level.CAUTION, "vitals_low",
                     "Vital signs critical: " + Math.round(t.healthFraction() * 100) + "% health."));
             lastHealthWarningAt = t.gameTick();
+        }
+        if (mode == SuitMode.FLIGHT && t.collisionAhead()
+                && t.gameTick() - lastCollisionWarningAt >= 90) {
+            events.add(new SuitAdvisory(SuitAdvisory.Level.CAUTION, "collision",
+                    "Obstacle along flight vector. Adjust course."));
+            lastCollisionWarningAt = t.gameTick();
+        }
+        if (mode == SuitMode.COMBAT && t.visibleHostiles() >= 4
+                && t.gameTick() - lastThreatWarningAt >= 200) {
+            events.add(new SuitAdvisory(SuitAdvisory.Level.CAUTION, "surrounded",
+                    t.visibleHostiles() + " nearby hostiles. Keep an escape route open."));
+            lastThreatWarningAt = t.gameTick();
         }
         return new Update(mode, events);
     }
