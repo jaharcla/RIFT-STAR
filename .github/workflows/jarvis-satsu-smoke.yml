@@ -1,0 +1,33 @@
+name: JARVIS Satsu engine smoke
+
+on:
+  pull_request:
+    paths:
+      - 'riftstar-companion/src/main/java/dev/riftstar/companion/satsu/**'
+      - 'riftstar-companion/src/test/java/dev/riftstar/companion/satsu/**'
+      - '.github/workflows/jarvis-satsu-smoke.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'riftstar-companion/src/main/java/dev/riftstar/companion/satsu/**'
+      - 'riftstar-companion/src/test/java/dev/riftstar/companion/satsu/**'
+
+jobs:
+  pure-engine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Compile and execute deterministic logic tests
+        shell: bash
+        run: |
+          mkdir -p build/jarvis-satsu-tests
+          ROOT=riftstar-companion/src/main/java/dev/riftstar/companion/satsu
+          TEST=riftstar-companion/src/test/java/dev/riftstar/companion/satsu/SuitEngineSmokeTest.java
+          javac --release 17 -d build/jarvis-satsu-tests \
+            "$ROOT/SuitMode.java" "$ROOT/SuitTelemetry.java" \
+            "$ROOT/SuitAdvisory.java" "$ROOT/SuitIntelligence.java" "$TEST"
+          java -cp build/jarvis-satsu-tests dev.riftstar.companion.satsu.SuitEngineSmokeTest
