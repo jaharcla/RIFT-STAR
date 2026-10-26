@@ -21,7 +21,7 @@ public final class SuitIntelligence {
     private long lastCollisionWarningAt = Long.MIN_VALUE / 2;
     private long lastThreatWarningAt = Long.MIN_VALUE / 2;
     private long lastTick = -1;
-    private boolean emergencyLatched = false;
+    private boolean powerCriticalLatched = false, healthCriticalLatched = false;
 
     public record Update(SuitMode mode, List<SuitAdvisory> advisories) {
         public Update { advisories = List.copyOf(advisories); }
@@ -39,7 +39,8 @@ public final class SuitIntelligence {
         lastCollisionWarningAt = Long.MIN_VALUE / 2;
         lastThreatWarningAt = Long.MIN_VALUE / 2;
         lastTick = -1;
-        emergencyLatched = false;
+        powerCriticalLatched = false;
+        healthCriticalLatched = false;
     }
 
     public Update update(SuitTelemetry t) {
@@ -62,12 +63,13 @@ public final class SuitIntelligence {
         boolean energyCritical = t.reactorFraction() != null
                 && t.reactorFraction() <= 0.10;
         boolean healthCritical = t.healthFraction() <= 0.20;
-        if (energyCritical || healthCritical) emergencyLatched = true;
-        else if (emergencyLatched && t.healthFraction() >= 0.32
-                && (t.reactorFraction() == null || t.reactorFraction() >= 0.18))
-            emergencyLatched = false;
+        if (energyCritical) powerCriticalLatched = true;
+        else if (t.reactorFraction() != null && t.reactorFraction() >= 0.18)
+            powerCriticalLatched = false; // unknown energy is never recovery evidence
+        if (healthCritical) healthCriticalLatched = true;
+        else if (t.healthFraction() >= 0.32) healthCriticalLatched = false;
 
-        if (emergencyLatched) {
+        if (powerCriticalLatched || healthCriticalLatched) {
             mode = SuitMode.EMERGENCY;
         } else if (t.gameTick() - deployedAt < BOOT_TICKS) {
             mode = SuitMode.INITIALIZING;
