@@ -12,7 +12,16 @@ public record SuitTelemetry(
         boolean combatEvent,
         double healthFraction,
         Double reactorFraction,
-        int visibleHostiles) {
+        int visibleHostiles,
+        boolean collisionAhead) {
+
+    /** Backward-compatible constructor when obstacle telemetry is unavailable. */
+    public SuitTelemetry(long gameTick, boolean equipped, boolean confirmedFlight,
+            boolean combatEvent, double healthFraction, Double reactorFraction,
+            int visibleHostiles) {
+        this(gameTick, equipped, confirmedFlight, combatEvent, healthFraction,
+                reactorFraction, visibleHostiles, false);
+    }
 
     public SuitTelemetry {
         if (gameTick < 0) throw new IllegalArgumentException("negative tick");
